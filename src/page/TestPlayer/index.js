@@ -25,7 +25,7 @@ function TestPlayer () {
     },
     {
       imgUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-      resourceUrl: '',
+      resourceUrl: 'http://47.110.125.71:8016/upload_files/alarm/20210224/b1081e00ce704a1ab532857e5126abf4/7946395_02_01_0000_210224044720_210224044732.mp4',
       type: 1
     },
     {
@@ -55,7 +55,6 @@ function TestPlayer () {
       <Player
         data={data}
       />
-
     </div>
   )
 }

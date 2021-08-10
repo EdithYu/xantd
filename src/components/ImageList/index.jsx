@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { message } from 'antd'
+import Video from '../Video'
 import './index.less'
 
 ImageList.propTypes = {
@@ -19,7 +20,7 @@ ImageList.defaultProps = {
 function ImageList (props) {
   const { data, number } = props
   const [showIndex, setShowIndex] = useState(0)
-  const [selectedIndex, setSelectedIndex] = useState(null)
+  const [selectedIndex, setSelectedIndex] = useState(0)
 
   const handleRightClick = () => {
     if (showIndex + number >= data.length) {
@@ -45,6 +46,8 @@ function ImageList (props) {
   const getShowData = () => {
     if (data.length > number) {
       return data.slice(0 + showIndex, number + showIndex)
+    } else {
+      return data
     }
   }
 
@@ -61,7 +64,11 @@ function ImageList (props) {
                 {
                   selectedIndex === index ? <div className='trangle' /> : null
                 }
-                <img src={item.imgUrl} alt='加载中' onClick={() => handleClickEvent(index, item)} className={selectedIndex === index ? 'selected' : ''} />
+                {
+                  item.type === 1 ? (
+                    <video src={item.imgUrl} alt='加载中' onClick={() => handleClickEvent(index, item)} className={selectedIndex === index ? 'selected' : ''} style={{width: '60px', height: '60px'}}/>
+                  ) :  <img src={item.imgUrl} alt='加载中' onClick={() => handleClickEvent(index, item)} className={selectedIndex === index ? 'selected' : ''} />
+                }
               </div>
             )
           })
