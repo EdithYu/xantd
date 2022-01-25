@@ -1,0 +1,151 @@
+.calculator-container {
+    -webkit-user-select:none;
+   -moz-user-select:none;
+   -ms-user-select:none;
+   user-select:none;
+    .ant-modal-content {
+        width: 1173px;
+        transform: translateX(-237px);
+    }
+    .ant-modal-body {
+        display: inline-flex;
+        padding: 0px;
+    }
+    .left-content {
+        display: inline-block;
+        width: 700px;
+        margin: 24px;
+        .input-wrap {
+            width: 700px;
+            height: 100px;
+            border: 1px solid #d9d9d9;
+            padding: 5px;
+            position: relative;
+            .obj-text {
+                color: #e3b699;
+            }
+        }
+        .title {
+            font-weight: 600;
+        }
+        .wrapspace {
+            margin-bottom: 16px;
+        }
+        .object {
+            overflow: auto;
+            height: 153px;
+            background: #FAFAFA;
+            .object-btn {
+                width: 114px;
+                margin: 8px 12px; 
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+        .delete-wrap {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+        }
+        .validate {
+            display: flex;
+            align-items: center;
+            .icon {
+                width: 20px;
+            }
+            .text-success {
+                color: #81d62c;
+            }
+            .text-failed {
+                color: red;
+            }
+        }
+    }
+    .right-content {
+        margin: 24px;
+        display: inline-block;
+        .fun-wrap {
+            width: 330px;
+            height: 95%;
+            border: 1px solid #d9d9d9;
+            overflow: auto;
+            .base {
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: rgba(0, 0, 0, 0.25);
+                padding: 10px 1px;
+            }
+            
+            
+            li {
+                padding: 6px;
+                font-size: 14px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #333333;
+                cursor: pointer;
+                .insert {
+                    display: none;
+                }
+                &:hover {
+                    background-color: #e4f2ff;
+                    .insert {
+                        color: #1890ff;
+                        display: block;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        float: right;
+                    }
+                }
+            }
+        }
+        .explain-wrap {
+            width: 400px;
+            height: 510px;
+            padding: 20px;
+            margin: 10px;
+            overflow-y: auto;
+            background-color: #ffffff;
+            // transition: all 0.2s ease-out;
+            animation: explain 0.2s ease-out; 
+            animation-iteration-count:1;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            right: 407px;
+            top: 43px;
+            position: absolute;
+            color: rgba(0, 0, 0, 0.65);
+            .icon {
+                display: inline-block;
+                width: 18px;
+                height: 20px;
+                margin-right: 3px;
+                vertical-align: bottom;
+                background: url(./fisicon.svg) center no-repeat;
+                background-size: cover;
+            }
+            .desc-title {
+                color: #262626;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            li {
+                list-style: inside;
+                padding: 0px 20px;
+            }
+           @keyframes explain {
+                from {
+                    width: 0px;
+                    overflow: hidden;
+                }
+                to {
+                    width: 400px;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
