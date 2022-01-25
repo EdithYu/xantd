@@ -1,19 +1,17 @@
 {
-  "name": "webpack-demo",
+  "name": "ey-design",
   "version": "1.0.0",
-  "description": "",
-  "private": true,
+  "description": "react-ui组件库,由这里开始",
   "files": [
     "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "start": "webpack serve --open --config webpack.dev.config.js --host 127.0.0.1",
     "build": "webpack --config webpack.xantd.config.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "edithyu",
   "license": "ISC",
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.12.13",

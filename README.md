@@ -1,12 +1,9 @@
 ## Install
 
 ```
-npm i @zqyu/x-design --save
+npm i @zqyu/ey-design --save
 ```
-
 ## Usage
 
-
 ## Examples
-
 [Here're some live demos](http://xxxx)
