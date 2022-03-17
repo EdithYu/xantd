@@ -15,7 +15,7 @@ const Demo = () => {
     {
       type: 'input',
       label: 'input',
-      name: 'name',
+      name: 'input',
       required: true,
     },
     {
@@ -113,8 +113,8 @@ const Demo = () => {
       name: 'upload',
       required: true,
       // accept: '.png',
-      maxCount: 2,
-      size: 1
+      maxCount: 3,
+      size: 5
     }
   ] 
   const onFinish = (values) => {
@@ -143,12 +143,16 @@ const Demo = () => {
           name: '抓拍',
           url: '/upload_files/attachment/20220316/f3862e4d070748d5a590974e5e95f86b.webp'
         }
-      ]
+      ],
+      text: {
+        number: 11,
+        currency: 'rmb'
+      }
     })
   }, [])
 
-  const handleValuesChange = (value, allValus) => {
-    console.log(value)
+  const handleValuesChange = (changedValues, allValus) => {
+    console.log(changedValues)
   }
 
 
@@ -167,7 +171,7 @@ const Demo = () => {
         name="basic"
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
-        autoComplete="off"
+        // autoComplete="off"
         onValuesChange={handleValuesChange}
       >
         {

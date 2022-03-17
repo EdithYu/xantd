@@ -1,0 +1,84 @@
+.custom-upload-component {
+  .text {
+    color: rgba(0, 0, 0, 0.65);
+    line-height: 22px;
+    margin-top: 10px;
+  }
+  &.picture-card {
+    .ant-upload-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+  .upload-list-item {
+    position: relative;
+    display: inline-block;
+    width: 104px;
+    height: 104px;
+    margin: 8px 8px 0 0;
+    vertical-align: top;
+    padding: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    .iconerror {
+      position: absolute;
+      right: -8px;
+      top: -8px;
+      color: rgba(0,0,0,0.85);
+    }
+
+    .upload-list-item-info {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+
+    .upload-list-item-thumbnail {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      text-align: center;
+      line-height: 54px;
+      img {
+        position: static;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .upload-list-item-name {
+      display: none;
+    }
+    .upload-list-item-file+.upload-list-item-name {
+      display: block;
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      text-align: center;
+      margin: 8px 0 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .upload-list-item-progress {
+      position: absolute;
+      bottom: 32px;
+      width: calc(100% - 14px);
+      padding-left: 0;
+    }
+    
+  }
+
+  .upload-list-item-error {
+    color: #ff4d4f;
+    .upload-list-item-thumbnail .anticon svg path[fill='#1890ff']{
+      fill: #ff4d4f;
+    }
+    .upload-list-item-thumbnail .anticon svg path[fill='#e6f7ff']{
+      fill: #fff2f0;
+    }
+  }
+}
