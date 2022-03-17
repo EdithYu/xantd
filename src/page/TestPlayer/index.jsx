@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Player from '@/components/Player'
 
 function TestPlayer () {
+  useEffect(() => {
+    debugger
+  }, [])
   const data = [
     {
       imgUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1135967539,624108140&fm=26&gp=0.jpg',

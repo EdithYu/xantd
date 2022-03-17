@@ -26,7 +26,21 @@ module.exports = {
   devServer: {
     contentBase: './build',
     port: '8081',
-    historyApiFallback: true
+    historyApiFallback: true,
+    proxy: {
+      '/api': {    // 设置请求前增加的值，这个值会代替我们的网址进行请求
+        open: true,
+        target: 'http://110.42.161.84:8016',    // 这个就是我们设置的代理服务器地址
+        changeOrigin: true,                    // 这个值就是用来跨域的，默认为false
+        pathRewrite: {'^/api': '/api'}
+      },
+      '/upload_files': {
+        open: true,
+        target: 'http://110.42.161.84:8016',    
+        changeOrigin: true,                    
+        pathRewrite: {'^/upload_files': '/upload_files'}
+      }
+    },
   },
   output: {
     filename: '[name].bundle.js',
