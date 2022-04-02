@@ -109,10 +109,29 @@ const Demo = () => {
     },
     {
       type: 'upload',
-      label: 'upload',
-      name: 'upload',
+      label: 'uploadtext',
+      name: 'uploadtext',
+      listType: 'text',
       required: true,
       // accept: '.png',
+      maxCount: 3,
+      size: 5
+    },
+    {
+      type: 'upload',
+      label: 'uploadpicture',
+      name: 'uploadpicture',
+      listType: 'picture',
+      required: true,
+      maxCount: 3,
+      size: 5
+    },
+    {
+      type: 'upload',
+      label: 'uploadcard',
+      name: 'uploadcard',
+      listType: 'picture-card',
+      required: true,
       maxCount: 3,
       size: 5
     }

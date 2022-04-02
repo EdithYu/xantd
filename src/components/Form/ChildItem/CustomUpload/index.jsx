@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { UploadOutlined } from '@ant-design/icons';
 import { Upload, Button, message, Modal } from 'antd'
+import { PlusOutlined } from '@ant-design/icons';
 import './index.less'
 
 const CustomUpload = ({ 
   value, 
   onChange, 
   maxCount,
+  listType = 'picture-card',
   ...props
 }) => {
   const [previewVisible, setPreviewVisible] = useState(false)
@@ -78,12 +80,18 @@ const CustomUpload = ({
     }
   }
 
-  // const uploadButton = (
-  //   <div>
-  //     <PlusOutlined />
-  //     <div style={{ marginTop: 8 }}>Upload</div>
-  //   </div>
-  // );
+  const isCardMode = () => {
+    return listType === 'picture-card'
+  }
+
+  const uploadButton = (
+    fileList.length >= maxCount ? null : (
+      <div>
+        <PlusOutlined />
+        <div style={{ marginTop: 8 }}>Upload</div>
+      </div>
+    )
+  )
 
   return (
     <>
@@ -91,15 +99,16 @@ const CustomUpload = ({
         className='custom-upload-component'
         name="files"
         action='/api/gpsservice/v1/attachment/multiUpload' 
-        listType="picture"
+        listType={listType}
         fileList={value || fileList}
         beforeUpload={beforeUpload}
-        // onPreview={handlePreview}
+        onPreview={isCardMode() ? handlePreview : undefined}
         onChange={handleOnChange}
         {...props} 
       >
-        <Button icon={<UploadOutlined />} disabled={fileList.length >= maxCount}>上传文件</Button>
-        {/* {fileList.length >= maxCount ? null : uploadButton} */}
+        {
+          isCardMode() ? uploadButton : <Button icon={<UploadOutlined />} disabled={fileList.length >= maxCount}>上传文件</Button>
+        }
       </Upload>
       <Modal
         visible={previewVisible}

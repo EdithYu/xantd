@@ -1,6 +1,7 @@
 import React from 'react'
 import { Form, Input, Select, Radio, TreeSelect, Cascader, DatePicker, InputNumber, Switch } from 'antd'
 import CustomUpload from './ChildItem/CustomUpload'
+import './index.less'
 const { TextArea } = Input
 
 const FormItem = ({
@@ -10,6 +11,7 @@ const FormItem = ({
   required,
   rules,
   formItemProps,
+  htmlFor='',
   ...props
 }) => {
   const getLabelAndValue = (labelKey, valueKey, item) => { // 默认为value为id字段， label为name字段
@@ -35,7 +37,7 @@ const FormItem = ({
       case 'upload':
         const { maxCount, size } = props
         return (
-          <div>
+          <div className='custom-upload-item'>
             <span>{label}</span>
             <span>(最多可上传{maxCount || 3}个附件，单个附件大小不超过{size || 5}M)</span>
           </div>
@@ -157,6 +159,7 @@ const FormItem = ({
 
   return (
     <Form.Item
+      htmlFor={htmlFor}
       label={getLabel(type, label)}
       name={name}
       rules={rules || [{ required: required, message: `${label}为必填项` }]}
